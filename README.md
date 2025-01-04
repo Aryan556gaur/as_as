@@ -1,60 +1,108 @@
-TalentScout Intelligent Hiring Assistant Chatbot
+1. Project Overview
 
-Overview
+The TalentScout Hiring Assistant chatbot is an intelligent recruitment tool designed to assist "TalentScout," a fictional recruitment agency specializing in technology placements. The chatbot simplifies the initial screening process by:
 
-The TalentScout Intelligent Hiring Assistant Chatbot is an AI-powered application designed for recruitment agencies specializing in technology placements. It streamlines the initial screening of candidates by collecting essential details and generating tailored technical questions based on their declared tech stack.
+Gathering essential candidate details like name, contact information, experience, and tech stack.
 
-Key Features
+Generating tailored technical interview questions based on the declared tech stack.
 
-Candidate Information Collection:
+Ensuring coherent and context-aware interactions to provide a seamless user experience.
 
-Gathers essential details like name, contact info, years of experience, desired positions, and tech stack.
+2. Installation Instructions
 
-Tech Stack-Based Question Generation:
+Follow these steps to set up and run the application locally:
 
-Uses advanced generative AI to produce 3-5 technical interview questions for the specified tech stack.
-
-Interactive UI:
-
-Built using Streamlit for a clean and user-friendly interface.
-
-Context Handling:
-
-Maintains conversation context for seamless interactions.
-
-Fallback Mechanisms:
-
-Provides meaningful responses for unexpected inputs.
-
-Conversation Conclusion:
-
-Gracefully ends conversations with next-step guidance.
-
-Installation
-
-Prerequisites
-
-Python 3.8+
-
-Required Python packages: streamlit, google-generativeai, dotenv
-
-Setup
-
-Clone the repository:
+Clone the Repository:
 
 git clone <repository_url>
 cd TalentScout
 
-Install dependencies:
+Set Up the Environment:
+
+Install Python (>=3.8).
+
+Install necessary libraries:
 
 pip install -r requirements.txt
 
-Set up your environment variables:
+API Key Configuration:
 
-Create a .env file in the project root:
+Create a .env file in the project directory.
 
-API_KEY=<Your_Generative_AI_API_Key>
+Add your API key for Google Generative AI:
 
-Run the application:
+API_KEY=your_api_key_here
+
+Run the Application:
 
 streamlit run app.py
+
+3. Usage Guide
+
+Launch the Application:
+Open the provided URL in your web browser after running the application.
+
+Interact with the Chatbot:
+
+Enter personal details like name, email, phone number, experience, and desired position.
+
+Provide your tech stack (e.g., Python, Django, PostgreSQL).
+
+Click on "Generate Questions" to receive tailored technical questions.
+
+End the Conversation:
+Type a conversation-ending keyword (e.g., "exit") to gracefully conclude the interaction.
+
+4. Technical Details
+
+Libraries Used:
+
+streamlit: For the frontend interface.
+
+google.generativeai: For leveraging generative models to craft questions.
+
+dotenv: To manage API keys securely.
+
+Model Details:
+
+The chatbot uses Google’s Gemini-Pro generative model for crafting technical questions based on user input.
+
+Architectural Decisions:
+
+Frontend: Developed using Streamlit for simplicity and interactivity.
+
+Backend: Powered by Google Generative AI for dynamic content generation.
+
+Data Handling: Minimal storage and privacy-focused, leveraging .env for secure API keys.
+
+5. Prompt Design
+
+Purpose:
+
+To accurately gather candidate information.
+
+To generate 3-5 tailored technical questions for the specified tech stack.
+
+Example Prompt:
+
+"You are an assistant generating 5 technical interview questions for the following tech stack: {tech_stack}."
+
+Optimization:
+
+Prompts are designed to be concise and guide the model for coherent outputs.
+
+Ensures context-aware responses for diverse tech stacks.
+
+6. Challenges & Solutions
+
+Challenge: Handling diverse tech stacks with varying complexities.
+
+Solution: Optimized prompts to ensure relevance and tailored questions for each input.
+
+Challenge: Managing sensitive candidate data securely.
+
+Solution: Used .env files for API keys and avoided persistent storage of sensitive information.
+
+Challenge: Maintaining context in conversations.
+
+Solution: Integrated context-aware prompt design and dynamic response mechanisms.
